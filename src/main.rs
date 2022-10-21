@@ -19,9 +19,20 @@ fn main() -> ! {
      */
 
     let mut led = pins.d13.into_output();
+    led.set_high();
 
+    // loop {
+    //     led.toggle();
+    //     arduino_hal::delay_ms(1000);
+    // }
     loop {
         led.toggle();
-        arduino_hal::delay_ms(1000);
+        arduino_hal::delay_ms(100);
+        led.toggle();
+        arduino_hal::delay_ms(100);
+        led.toggle();
+        arduino_hal::delay_ms(100);
+        led.toggle();
+        arduino_hal::delay_ms(800);
     }
 }
